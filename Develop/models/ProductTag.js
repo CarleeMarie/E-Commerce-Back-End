@@ -14,27 +14,27 @@ ProductTag.init(
     },
     product_id: {
       type: DataTypes.INTEGER,
+      // references the Product model's id
       references: {
-        model: Product,
+        model: 'product',
         key: 'id',
       }
-      // TODO references the Product model's id,
     },
     tag_id: {
       type: DataTypes.INTEGER,
+      // references the Tag model's id
       references: {
-        model: Tag,
+        model: 'tag',
         key: 'id',
-      }//TODO: references the Tag model's id.
+      }
     },
   },
-
   {
     sequelize,
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'product',
+    modelName: 'productTag',
   }
 );
   
